@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    private var hud :MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +25,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
     }
-    
+    //MARK: gets fired when a plane is detected
+    func renderer(_renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor){
+        
+        if anchor is ARPlaneAnchor{ // Is the detected anchor a plane:
+            DispatchQueue.main.sync{ //does not run in the background)
+                self.hud.label.text = "Plane detected"
+                self.hud.hide(animated: true, afterDelay: 1.0)
+            }
+        }
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
+        // Create a session configuration - Plane detection
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
 
         // Run the view's session
-        sceneView.session.run(configuration)
+        sceneView.session.run(configuration) //Detect a plane
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,6 +57,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    //MARK: renderer - gets fired, when a plane is detected
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        
+        if anchor is ARPlaneAnchor {
+            
+            DispatchQueue.main.async {
+                
+                self.hud.label.text = "Plane Detected"
+                self.hud.hide(animated: true, afterDelay: 1.0)
+            }
+        }
+        
     }
 
     // MARK: - ARSCNViewDelegate

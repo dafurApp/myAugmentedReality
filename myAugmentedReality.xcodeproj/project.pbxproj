@@ -15,6 +15,8 @@
 		2F374E4D220B930100E37FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F374E4B220B930100E37FEC /* LaunchScreen.storyboard */; };
 		2F374E58220B930100E37FEC /* myAugmentedRealityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F374E57220B930100E37FEC /* myAugmentedRealityTests.swift */; };
 		2F374E63220B930100E37FEC /* myAugmentedRealityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F374E62220B930100E37FEC /* myAugmentedRealityUITests.swift */; };
+		2FBA51AD220CBD6B004B229E /* Armchair Collada in Resources */ = {isa = PBXBuildFile; fileRef = 2FBA51AC220CBD6B004B229E /* Armchair Collada */; };
+		2FBA51B1220CBE41004B229E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA51B0220CBE41004B229E /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		2F374E5E220B930100E37FEC /* myAugmentedRealityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myAugmentedRealityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F374E62220B930100E37FEC /* myAugmentedRealityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAugmentedRealityUITests.swift; sourceTree = "<group>"; };
 		2F374E64220B930100E37FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FBA51AC220CBD6B004B229E /* Armchair Collada */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Armchair Collada"; sourceTree = "<group>"; };
+		2FBA51AE220CBE40004B229E /* myAugmentedReality-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myAugmentedReality-Bridging-Header.h"; sourceTree = "<group>"; };
+		2FBA51AF220CBE41004B229E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2FBA51B0220CBE41004B229E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +109,13 @@
 				2F374E42220B92FE00E37FEC /* art.scnassets */,
 				2F374E44220B92FE00E37FEC /* ViewController.swift */,
 				2F374E46220B92FE00E37FEC /* Main.storyboard */,
+				2FBA51AF220CBE41004B229E /* MBProgressHUD.h */,
+				2FBA51B0220CBE41004B229E /* MBProgressHUD.m */,
 				2F374E49220B930100E37FEC /* Assets.xcassets */,
+				2FBA51AC220CBD6B004B229E /* Armchair Collada */,
 				2F374E4B220B930100E37FEC /* LaunchScreen.storyboard */,
 				2F374E4E220B930100E37FEC /* Info.plist */,
+				2FBA51AE220CBE40004B229E /* myAugmentedReality-Bridging-Header.h */,
 			);
 			path = myAugmentedReality;
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 				TargetAttributes = {
 					2F374E3C220B92FE00E37FEC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					2F374E52220B930100E37FEC = {
 						CreatedOnToolsVersion = 10.1;
@@ -232,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBA51AD220CBD6B004B229E /* Armchair Collada in Resources */,
 				2F374E43220B92FE00E37FEC /* art.scnassets in Resources */,
 				2F374E4D220B930100E37FEC /* LaunchScreen.storyboard in Resources */,
 				2F374E4A220B930100E37FEC /* Assets.xcassets in Resources */,
@@ -261,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F374E45220B92FE00E37FEC /* ViewController.swift in Sources */,
+				2FBA51B1220CBE41004B229E /* MBProgressHUD.m in Sources */,
 				2F374E41220B92FE00E37FEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFXE9PKH9C;
 				INFOPLIST_FILE = myAugmentedReality/Info.plist;
@@ -445,6 +459,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.dafur.myAugmentedReality;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myAugmentedReality/myAugmentedReality-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFXE9PKH9C;
 				INFOPLIST_FILE = myAugmentedReality/Info.plist;
@@ -463,6 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.dafur.myAugmentedReality;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myAugmentedReality/myAugmentedReality-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
